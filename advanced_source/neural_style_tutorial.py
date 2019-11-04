@@ -109,9 +109,13 @@ def image_loader(image_name):
     image = loader(image).unsqueeze(0)
     return image.to(device, torch.float)
 
+#Original
+#style_img = image_loader("./data/images/neural-style/picasso.jpg")
+#content_img = image_loader("./data/images/neural-style/dancing.jpg")
 
-style_img = image_loader("./data/images/neural-style/picasso.jpg")
-content_img = image_loader("./data/images/neural-style/dancing.jpg")
+#Commit after change to local dir
+style_img = image_loader("/Users/siyunhe/project/FALL2019/pytorch_tutorial/Tutorial_data/Neural_transfer/picasso.jpg")
+content_img = image_loader("/Users/siyunhe/project/FALL2019/pytorch_tutorial/Tutorial_data/Neural_transfer/dancing.jpg")
 
 assert style_img.size() == content_img.size(), \
     "we need to import style and content images of the same size"
